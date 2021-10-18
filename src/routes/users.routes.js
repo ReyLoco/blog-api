@@ -1,24 +1,21 @@
 import { Router } from "express";
-import User from "../models/User";
-/********** ROUTER *************/
-const router = Router();
+import * as userCtrl from "../controllers/user.controller";
+/********** USERS ROUTER *************/
 
-router.get("/", async (req, res) => {
-  const Users = await User.find();
-  res.json(Users);
-});
+const userRouter = Router();
 
-router.post("/", async (req, res) => {
-  try {
-    const { name, surname, email, password } = req.body;
-    const newUser = new User({ name, surname, email, password });
-    const savedUser = await newUser.save();
-    res.json({ sucess: true, message: "Usuario Guardado", savedUser });
-  } catch (error) {
-    res.json({ sucess: false, message: "Error al guardar el usuario", error });
-  }
-});
+userRouter.post("/", userCtrl.createUser);
 
-export default router;
+userRouter.get("/", userCtrl.findAllUsers);
 
-/********** ROUTER *************/
+userRouter.get("/:id", userCtrl.findOneById);
+
+userRouter.get("/find/:text", userCtrl.findUserByName);
+
+userRouter.delete("/:id", userCtrl.deleteUser);
+
+userRouter.put("/:id", userCtrl.updateUser);
+
+export default userRouter;
+
+/********** USERS ROUTER *************/
