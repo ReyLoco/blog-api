@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: false })); // Permite entender las petici
 
 // **** Routes ****
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome" });
+  res.json({ message: "This is an API to get users and articles" });
 });
 
 app.use("/api/users", UsersRoutes); // Establecemos la url base
