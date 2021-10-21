@@ -1,8 +1,8 @@
 # BLOG-API.
 
-This is an API aplication to learn and practice Node, API REST and MongoDB.
+This is an API aplication to learn and practice Node.js, API REST and MongoDB.
 
-Esta es una aplicación para el aprendizaje y práctica de Node, API REST and MongoDB.
+Esta es una aplicación para el aprendizaje y práctica de Node.js, API REST and MongoDB.
 
 ## Notes / Notas.
 
@@ -49,7 +49,11 @@ _`npm i cors`_
 
 **_mongoose-paginate-v2:_**  
 Permite la paginación de resultados de las consultas a la BD.  
-_`npm i mongoose-paginate-v2`_
+_`npm i mongoose-paginate-v2`_  
+
+**_pm2_**  
+Permite mantener la ejecución de la aplicación en el servidor. Solo se instala en el proyecto en el servidor.  
+_`npm i pm2`_  
 
 ---
 
