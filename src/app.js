@@ -7,6 +7,7 @@ import UsersRoutes from "./routes/users.routes";
 /********** APP *************/
 
 const app = express();
+const path = require('path');
 
 // **** Settings ****
 app.set("port", config.port || 3000);
@@ -21,7 +22,8 @@ app.use(express.urlencoded({ extended: false })); // Permite entender las petici
 
 // **** Routes ****
 app.get("/", (req, res) => {
-  res.json({ message: "This is an API to get users and articles" });
+  // res.json({ message: "This is an API to get users and articles" });
+  res.sendFile(path.join(__dirname, '/index.html'));
 });
 
 app.use("/api/users", UsersRoutes); // Establecemos la url base

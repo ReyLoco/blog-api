@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sample Site</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <style>
+          h4 {
+            font-size: 0.9rem;
+          }
+
+          pre {
+            margin: 0;
+          }
+          /* info (hed, dek, source, credit) */
+          .rg-container {
+            font-family: "Lato", Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.4;
+            margin: 0;
+            padding: 1em 0.5em;
+            color: #222;
+          }
+          .rg-header {
+            /* margin-bottom: 1em; */
+            text-align: right;
+          }
+
+          /* .rg-header > * {
+
+            display: block;
+          } */
+          .rg-hed {
+            font-weight: bold;
+            font-size: 1.2em;
+          }
+          .rg-dek {
+            font-size: 1em;
+          }
+
+          .rg-source {
+            margin: 0;
+            font-size: 0.75em;
+            text-align: right;
+          }
+          .rg-source .pre-colon {
+            text-transform: uppercase;
+          }
+
+          .rg-source .post-colon {
+            font-weight: bold;
+          }
+
+          /* table */
+          table.rg-table {
+            width: 100%;
+            margin-bottom: 0.5em;
+            font-size: 1em;
+            border-collapse: collapse;
+            border-spacing: 0;
+          }
+          table.rg-table tr {
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+            text-align: left;
+            color: #333;
+          }
+          table.rg-table thead {
+            border-bottom: 3px solid #ddd;
+          }
+          table.rg-table tr {
+            border-bottom: 1px solid #ddd;
+            color: #222;
+          }
+          table.rg-table tr.highlight {
+            background-color: #dcf1f0 !important;
+          }
+          table.rg-table.zebra tr:nth-child(even) {
+            background-color: #f6f6f6;
+          }
+          table.rg-table th {
+            font-weight: bold;
+            padding: 0.35em;
+            font-size: 0.9em;
+          }
+          table.rg-table td {
+            padding: 0.35em;
+            font-size: 0.9em;
+          }
+          table.rg-table .highlight td {
+            font-weight: bold;
+          }
+          table.rg-table th.number,
+          td.number {
+            text-align: right;
+          }
+
+          /* media queries */
+          @media screen and (max-width: 600px) {
+            .rg-container {
+              max-width: 600px;
+              margin: 0 auto;
+            }
+            table.rg-table {
+              width: 100%;
+            }
+
+            table.rg-table thead {
+              display: none;
+            }
+            table.rg-table tbody {
+              width: 100%;
+            }
+            table.rg-table tr,
+            table.rg-table th,
+            table.rg-table td {
+              display: block;
+              padding: 0;
+            }
+            table.rg-table tr {
+              border-bottom: none;
+              margin: 0 0 1em 0;
+              padding: 0.5em;
+            }
+            table.rg-table tr.highlight {
+              background-color: inherit !important;
+            }
+            table.rg-table.zebra tr:nth-child(even) {
+              background-color: transparent;
+            }
+            table.rg-table.zebra td:nth-child(even) {
+              background-color: #f6f6f6;
+            }
+            table.rg-table tr:nth-child(even) {
+              background-color: transparent;
+            }
+            table.rg-table td {
+              padding: 0.5em 0 0.25em 0;
+              border-bottom: 1px dotted #ccc;
+              text-align: right;
+            }
+            table.rg-table td[data-title]:before {
+              content: attr(data-title);
+              font-weight: bold;
+              display: inline-block;
+              content: attr(data-title);
+              float: left;
+              margin-right: 0.5em;
+              font-size: 0.95em;
+            }
+            table.rg-table td:last-child {
+              padding-right: 0;
+              border-bottom: 2px solid #ccc;
+            }
+            table.rg-table td:empty {
+              display: none;
+            }
+            table.rg-table .highlight td {
+              background-color: inherit;
+              font-weight: normal;
+            }
+          }
+        </style>
+
+        <h1>Api - Blog</h1>
+        <h2>Learning API REST</h2>
+        <h3>Using Node.JS, MongoDB, Git & Clouding.Io.</h3>
+        <p>
+          This API is a project developed to learn who to create an API instaled in a server running constantly,
+          retrieving data or saving data in a MongoDB data base.
+        </p>
+        <p>You can feel free for using it as a Mock Server for your development tests or projects.</p>
+        <h3>Technologies.</h3>
+        <ul>
+          <li><strong>Language: </strong>JavaScript /<a href="https://www.mongodb.com/atlas/database"> Node.js</a></li>
+          <li><strong>Data Base: </strong><a href="https://www.mongodb.com/atlas/database">MongoDB / Atlas</a></li>
+          <li><strong>Repository: </strong><a href="https://github.com/ReyLoco/blog-api.git">Github</a></li>
+          <li><strong>Server: </strong>Allocate in <a href="https://portal.clouding.io">Clouding.io</a></li>
+        </ul>
+        <h3>Use cases.</h3>
+
+        <div class="code">
+          <h4>User Schema</h4>
+          <pre>
+      User {
+        name: { String, required },
+        surname: { String, required },
+        email: { String, required },
+        password: { String, required },
+        timestamps: true,
+      }
+          </pre>
+        </div>
+
+        <div class="rg-container">
+          <table class="rg-table">
+            <caption class="rg-header">
+              <span class="rg-hed">Users</span>
+              <span class="rg-dek">How to get or save users data.</span>
+            </caption>
+            <thead>
+              <tr>
+                <th id="th1" class="text">METHOD</th>
+                <th id="th2" class="text">CALL</th>
+                <th id="th3" class="text">DESCRIPTION</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text" data-title="METHOD">POST:</td>
+                <td class="text" data-title="CALL">api/users/</td>
+                <td class="text" data-title="DESCRIPTION">Creates a new user.</td>
+              </tr>
+
+              <tr>
+                <td class="text" data-title="METHOD">GET:</td>
+                <td class="text" data-title="CALL">api/users/</td>
+                <td class="text" data-title="DESCRIPTION">Get users list.</td>
+              </tr>
+
+              <tr>
+                <td class="text" data-title="METHOD">GET:</td>
+                <td class="text" data-title="CALL">api/users/size=0?page=0?name=xxxxx</td>
+                <td class="text" data-title="DESCRIPTION">Get users list with pagination and filter.</td>
+              </tr>
+
+              <tr>
+                <td class="text" data-title="METHOD">GET:</td>
+                <td class="text" data-title="CALL">api/users/:id</td>
+                <td class="text" data-title="DESCRIPTION">Get an user by Id.</td>
+              </tr>
+
+              <tr>
+                <td class="text" data-title="METHOD">GET:</td>
+                <td class="text" data-title="CALL">api/users/find/:text</td>
+                <td class="text" data-title="DESCRIPTION">
+                  Get users list corresponding in name or surname with one text.
+                </td>
+              </tr>
+
+              <tr>
+                <td class="text" data-title="METHOD">DELETE:</td>
+                <td class="text" data-title="CALL">api/users/:id</td>
+                <td class="text" data-title="DESCRIPTION">Delete an user.</td>
+              </tr>
+
+              <tr>
+                <td class="text" data-title="METHOD">PUT:</td>
+                <td class="text" data-title="CALL">api/users/:id</td>
+                <td class="text" data-title="DESCRIPTION">Update an user.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="code">
+          <h4>Article Schema</h4>
+          <pre>
+      Article {
+        title: { String, required },
+        text: { String, required },
+        author: { String },
+        timestamps: true,
+      }
+          </pre>
+        </div>
+
+        <div class="rg-container">
+          <table class="rg-table">
+            <caption class="rg-header">
+              <span class="rg-hed">Articles</span>
+              <span class="rg-dek">How to get and save articles data.</span>
+            </caption>
+            <thead>
+              <tr>
+                <th id="th1" class="text">METHOD</th>
+                <th id="th2" class="text">CALL</th>
+                <th id="th3" class="text">DESCRIPTION</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text" data-title="METHOD">POST:</td>
+                <td class="text" data-title="CALL">api/articles/</td>
+                <td class="text" data-title="DESCRIPTION">Create a new article.</td>
+              </tr>
+
+              <tr>
+                <td class="text" data-title="METHOD">GET:</td>
+                <td class="text" data-title="CALL">api/articles/</td>
+                <td class="text" data-title="DESCRIPTION">Get articles list.</td>
+              </tr>
+
+              <tr>
+                <td class="text" data-title="METHOD">GET:</td>
+                <td class="text" data-title="CALL">api/articles/size=0?page=0?title=xxxxx</td>
+                <td class="text" data-title="DESCRIPTION">Get articles list with pagination and filter.</td>
+              </tr>
+
+              <tr>
+                <td class="text" data-title="METHOD">GET:</td>
+                <td class="text" data-title="CALL">api/articles/:id</td>
+                <td class="text" data-title="DESCRIPTION">Get an article by Id.</td>
+              </tr>
+
+              <tr>
+                <td class="text" data-title="METHOD">GET:</td>
+                <td class="text" data-title="CALL">api/articles/find/:text</td>
+                <td class="text" data-title="DESCRIPTION">
+                  Get an articles list corresponding in title or text by one text.
+                </td>
+              </tr>
+
+              <tr>
+                <td class="text" data-title="METHOD">DELETE:</td>
+                <td class="text" data-title="CALL">api/articles/:id</td>
+                <td class="text" data-title="DESCRIPTION">Delete an article.</td>
+              </tr>
+
+              <tr>
+                <td class="text" data-title="METHOD">PUT:</td>
+                <td class="text" data-title="CALL">api/articles/:id</td>
+                <td class="text" data-title="DESCRIPTION">Update an article.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
