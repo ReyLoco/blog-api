@@ -196,13 +196,19 @@
         <h3>Use cases.</h3>
 
         <div class="code">
-          <h4>User Schema</h4>
+          <h4>User Schema: </h4>
           <pre>
       User {
         name: { String, required },
         surname: { String, required },
         email: { String, required },
         password: { String, required },
+        address: { String },
+        location: { String },
+        province: { String },
+        country: { String },
+        phone: { String },
+        birthdate: { Date },
         timestamps: true,
       }
           </pre>
@@ -224,31 +230,31 @@
             <tbody>
               <tr>
                 <td class="text" data-title="METHOD">POST:</td>
-                <td class="text" data-title="CALL">api/users/</td>
+                <td class="text" data-title="CALL">217.71.202.202:8000/api/users/</td>
                 <td class="text" data-title="DESCRIPTION">Creates a new user.</td>
               </tr>
 
               <tr>
                 <td class="text" data-title="METHOD">GET:</td>
-                <td class="text" data-title="CALL">api/users/</td>
+                <td class="text" data-title="CALL">217.71.202.202:8000/api/users/</td>
                 <td class="text" data-title="DESCRIPTION">Get users list.</td>
               </tr>
 
               <tr>
                 <td class="text" data-title="METHOD">GET:</td>
-                <td class="text" data-title="CALL">api/users/size=0?page=0?name=xxxxx</td>
+                <td class="text" data-title="CALL">217.71.202.202:8000/api/users/size=0?page=0?name=xxxxx</td>
                 <td class="text" data-title="DESCRIPTION">Get users list with pagination and filter.</td>
               </tr>
 
               <tr>
                 <td class="text" data-title="METHOD">GET:</td>
-                <td class="text" data-title="CALL">api/users/:id</td>
+                <td class="text" data-title="CALL">217.71.202.202:8000/api/users/:id</td>
                 <td class="text" data-title="DESCRIPTION">Get an user by Id.</td>
               </tr>
 
               <tr>
                 <td class="text" data-title="METHOD">GET:</td>
-                <td class="text" data-title="CALL">api/users/find/:text</td>
+                <td class="text" data-title="CALL">217.71.202.202:8000/api/users/find/:text</td>
                 <td class="text" data-title="DESCRIPTION">
                   Get users list corresponding in name or surname with one text.
                 </td>
@@ -256,13 +262,13 @@
 
               <tr>
                 <td class="text" data-title="METHOD">DELETE:</td>
-                <td class="text" data-title="CALL">api/users/:id</td>
+                <td class="text" data-title="CALL">217.71.202.202:8000/api/users/:id</td>
                 <td class="text" data-title="DESCRIPTION">Delete an user.</td>
               </tr>
 
               <tr>
                 <td class="text" data-title="METHOD">PUT:</td>
-                <td class="text" data-title="CALL">api/users/:id</td>
+                <td class="text" data-title="CALL">217.71.202.202:8000/api/users/:id</td>
                 <td class="text" data-title="DESCRIPTION">Update an user.</td>
               </tr>
             </tbody>
@@ -270,7 +276,7 @@
         </div>
 
         <div class="code">
-          <h4>Article Schema</h4>
+          <h4>Article Schema:</h4>
           <pre>
       Article {
         title: { String, required },
@@ -297,31 +303,31 @@
             <tbody>
               <tr>
                 <td class="text" data-title="METHOD">POST:</td>
-                <td class="text" data-title="CALL">api/articles/</td>
+                <td class="text" data-title="CALL">217.71.202.202:8000/api/articles/</td>
                 <td class="text" data-title="DESCRIPTION">Create a new article.</td>
               </tr>
 
               <tr>
                 <td class="text" data-title="METHOD">GET:</td>
-                <td class="text" data-title="CALL">api/articles/</td>
+                <td class="text" data-title="CALL">217.71.202.202:8000/api/articles/</td>
                 <td class="text" data-title="DESCRIPTION">Get articles list.</td>
               </tr>
 
               <tr>
                 <td class="text" data-title="METHOD">GET:</td>
-                <td class="text" data-title="CALL">api/articles/size=0?page=0?title=xxxxx</td>
+                <td class="text" data-title="CALL">217.71.202.202:8000/api/articles/size=0?page=0?title=xxxxx</td>
                 <td class="text" data-title="DESCRIPTION">Get articles list with pagination and filter.</td>
               </tr>
 
               <tr>
                 <td class="text" data-title="METHOD">GET:</td>
-                <td class="text" data-title="CALL">api/articles/:id</td>
+                <td class="text" data-title="CALL">217.71.202.202:8000/api/articles/:id</td>
                 <td class="text" data-title="DESCRIPTION">Get an article by Id.</td>
               </tr>
 
               <tr>
                 <td class="text" data-title="METHOD">GET:</td>
-                <td class="text" data-title="CALL">api/articles/find/:text</td>
+                <td class="text" data-title="CALL">217.71.202.202:8000/api/articles/find/:text</td>
                 <td class="text" data-title="DESCRIPTION">
                   Get an articles list corresponding in title or text by one text.
                 </td>
@@ -329,13 +335,13 @@
 
               <tr>
                 <td class="text" data-title="METHOD">DELETE:</td>
-                <td class="text" data-title="CALL">api/articles/:id</td>
+                <td class="text" data-title="CALL">217.71.202.202:8000/api/articles/:id</td>
                 <td class="text" data-title="DESCRIPTION">Delete an article.</td>
               </tr>
 
               <tr>
                 <td class="text" data-title="METHOD">PUT:</td>
-                <td class="text" data-title="CALL">api/articles/:id</td>
+                <td class="text" data-title="CALL">217.71.202.202:8000/api/articles/:id</td>
                 <td class="text" data-title="DESCRIPTION">Update an article.</td>
               </tr>
             </tbody>

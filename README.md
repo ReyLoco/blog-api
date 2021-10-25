@@ -75,6 +75,12 @@ User {
   surname: { String, required },
   email: { String, required },
   password: { String, required },
+  address: { String },
+  location: { String },
+  province: { String },
+  country: { String },
+  phone: { String },
+  birthdate: { Date },
   timestamps: true,
 }
 ```

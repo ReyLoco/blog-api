@@ -5,11 +5,11 @@ import User from "../models/User";
 
 export const createUser = async (req, res) => {
   try {
-    const { name, surname, email, password } = req.body;
+    const { name, surname, email, password, address, location, province, country, phone, birthdate } = req.body;
 
     if (!name || !surname || !email || !password) res.status(400).json({ sucess: false, message: Cnt.ER_CREATE_REQ });
 
-    const newUser = new User({ name, surname, email, password });
+    const newUser = new User({ name, surname, email, password, address, location, province, country, phone, birthdate });
     const savedUser = await newUser.save();
     res.json({ sucess: true, message: Cnt.TX_US_CREATE, savedUser });
   } catch (error) {
@@ -20,21 +20,35 @@ export const createUser = async (req, res) => {
 export const findAllUsers = async (req, res) => {
   try {
     const { size, page, name } = req.query;
-    const { limit, offset } = getPagination(page, size);
 
-    const condition = name
-      ? {
-          name: { $regex: new RegExp(name), $options: "i" },
-        }
-      : {};
+    let data = {};
 
-    const data = await User.paginate(condition, { offset, limit });
-    res.json({
-      totalItems: data.totalDocs,
-      users: data.docs,
-      totalPages: data.totalPages,
-      currentPage: data.page - 1,
-    });
+    if (!size && !page && !name) {
+      data = await User.find();
+      res.json({
+        totalItems: data.length,
+        users: data,
+        totalPages: 1,
+        currentPage: 1,
+      });
+    } else {
+      const { limit, offset } = getPagination(page, size);
+
+      const condition = name
+        ? {
+            name: { $regex: new RegExp(name), $options: "i" },
+          }
+        : {};
+      data = await User.paginate(condition, { offset, limit });
+
+      res.json({
+        totalItems: data.totalDocs,
+        users: data.docs,
+        totalPages: data.totalPages,
+        currentPage: data.page - 1,
+      });
+    }
+
   } catch (error) {
     res.status(500).json({ sucess: false, message: Cnt.ER_FINDALL, error });
   }
