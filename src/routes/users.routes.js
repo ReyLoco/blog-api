@@ -6,7 +6,7 @@ const userRouter = Router();
 
 userRouter.post("/", userCtrl.createUser);
 
-// http://localhost:8000/api/users/?size=2?page=2?name=mar
+// /localhost:8000/api/users/?size=2&page=2&name=texto
 userRouter.get("/", userCtrl.findAllUsers);
 
 userRouter.get("/:id", userCtrl.findOneById);

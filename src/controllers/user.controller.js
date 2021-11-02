@@ -21,7 +21,7 @@ export const findAllUsers = async (req, res) => {
   try {
     const { size, page, name } = req.query;
 
-    console.log("Entrada: ", size, page, name)
+    // console.log("Entrada: ", size, page, name)
 
     let data = {};
 
@@ -43,11 +43,11 @@ export const findAllUsers = async (req, res) => {
         : {};
       const select = "-password"
 
-      console.log(offset, limit, condition)
+      // console.log(offset, limit, condition)
 
       data = await User.paginate(condition, { offset, limit, select });
 
-      console.log(...data.docs)
+      // console.log(...data.docs)
 
       res.json({
         totalItems: data.totalDocs,
