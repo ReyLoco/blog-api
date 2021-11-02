@@ -45,15 +45,15 @@ _`npm i morgan`_
 
 **_cors:_**  
 Permite la comunicaciones entre servidores.  
-_`npm i cors`_  
+_`npm i cors`_
 
 **_mongoose-paginate-v2:_**  
 Permite la paginación de resultados de las consultas a la BD.  
-_`npm i mongoose-paginate-v2`_  
+_`npm i mongoose-paginate-v2`_
 
 **_pm2_**  
-Permite mantener la ejecución de la aplicación en el servidor. Solo se instala en el proyecto en el servidor.  
-_`npm i pm2`_  
+Permite mantener la ejecución de la aplicación en el servidor. Solo se instala en el proyecto en el servidor. Consultar página oficial de [PM2](https://pm2.keymetrics.io/docs/usage/process-management/) para conocer comandos de uso.
+_`npm i pm2`_
 
 ---
 
@@ -87,7 +87,7 @@ User {
 
 ### Articles / Articulos.
 
-_POST:_ &nbsp;  &nbsp; &nbsp;`api/articles/` Create a new article. / Crear un articulo.  
+_POST:_ &nbsp; &nbsp; &nbsp;`api/articles/` Create a new article. / Crear un articulo.  
 _GET:_ &nbsp; &nbsp; &nbsp; &nbsp; `api/articles/` Get articles list. / Obtener la lista de articulos.  
 _GET:_ &nbsp; &nbsp; &nbsp; &nbsp; `api/articles/size=0?page=0?title=xxxxx` Get articles list with pagination and filter. / Obtener la lista de artículos con paginación y filtro.  
 _GET:_ &nbsp; &nbsp; &nbsp; &nbsp; `api/articles/:id` Get an article by Id. / Obtener un articulo por Id.  

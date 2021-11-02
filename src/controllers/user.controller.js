@@ -21,10 +21,12 @@ export const findAllUsers = async (req, res) => {
   try {
     const { size, page, name } = req.query;
 
+    console.log("Entrada: ", size, page, name)
+
     let data = {};
 
     if (!size && !page && !name) {
-      data = await User.find();
+      data = await User.find().select("-password");
       res.json({
         totalItems: data.length,
         users: data,
@@ -39,7 +41,13 @@ export const findAllUsers = async (req, res) => {
             name: { $regex: new RegExp(name), $options: "i" },
           }
         : {};
-      data = await User.paginate(condition, { offset, limit });
+      const select = "-password"
+
+      console.log(offset, limit, condition)
+
+      data = await User.paginate(condition, { offset, limit, select });
+
+      console.log(...data.docs)
 
       res.json({
         totalItems: data.totalDocs,
@@ -50,6 +58,7 @@ export const findAllUsers = async (req, res) => {
     }
 
   } catch (error) {
+    console.log(error)
     res.status(500).json({ sucess: false, message: Cnt.ER_FINDALL, error });
   }
 };
@@ -57,28 +66,28 @@ export const findAllUsers = async (req, res) => {
 export const findOneById = async (req, res) => {
   try {
     const id = req.params.id;
-    const user = await User.findById(id);
+    const user = await User.findById(id).select("-password");
 
     if (!user) return res.status(404).json({ message: Cnt.ER_NOTFOUND1 + id + Cnt.ER_NOTFOUND2 });
 
     res.json(user);
   } catch (error) {
+    console.log(error)
     res.status(500).json({ sucess: false, message: Cnt.ER_FINDONE, error });
   }
 };
 
 export const findUserByName = async (req, res) => {
   try {
-    let string = req.params.text;
+    let textToFind = new RegExp(req.params.text, "i");
 
     const users = await User.find({
-      $or: [
-        { "name": new RegExp(string), $options: "i" },
-        { "surname": new RegExp(string), $options: "i" },
-      ],
-    });
+      $or: [{ name: textToFind }, { surname: textToFind },],
+    }).select("-password");
+
     res.json(users);
   } catch (error) {
+    console.log(error)
     res.status(500).json({ sucess: false, message: Cnt.ER_FINDNAME, error });
   }
 };
