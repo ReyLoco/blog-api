@@ -56,6 +56,15 @@ Permite mantener la ejecución de la aplicación en el servidor. Solo se instala
 _`npm i pm2`_
 
 ---
+### Algunos comandos para el servidor.
+
+`npm run build` Permite construir el proyecto en la carpeta Dist.
+
+`pm2 start dist/server.js` Permite arrancar el servidor para que se ejecute constantemente.
+
+`pm2 stop server` Permite detener el servidor.
+
+---
 
 ## How to Use / Uso de la API.
 
@@ -63,7 +72,7 @@ _`npm i pm2`_
 
 _POST:_ &nbsp; &nbsp; &nbsp; `api/users/` Creates a new user. / Crea un usuario nuevo.  
 _GET:_ &nbsp; &nbsp; &nbsp; &nbsp; `api/users/` Get users list. / Obtener la lista de usuarios.  
-_GET:_ &nbsp; &nbsp; &nbsp; &nbsp; `api/users/size=0?page=0?name=xxxxx` Get users list with pagination and filter. / Obtener la lista de usuarios con paginación y filtro.  
+_GET:_ &nbsp; &nbsp; &nbsp; &nbsp; `api/users/?size=0&page=0&name=xxxxx` Get users list with pagination and filter. / Obtener la lista de usuarios con paginación y filtro.  
 _GET:_ &nbsp; &nbsp; &nbsp; &nbsp; `api/users/:id` Get an user by Id. / Obtener un usuario por Id.  
 _GET:_ &nbsp; &nbsp; &nbsp; &nbsp; `api/users/find/:text` Get an users list corresponding in name or surname by one text. / Obtener una lista de usuarios que corresponda en nombre o apellido con un texto.  
 _DELETE:_ &nbsp; `api/users/:id` Delete an user. / Eliminar un usuario.  
